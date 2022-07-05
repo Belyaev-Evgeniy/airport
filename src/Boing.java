@@ -1,17 +1,32 @@
-import java.util.ArrayList;
-import java.util.List;
+public class Boing extends Airport implements Airplane, Passenger{
+    private String boing437 = "437-B";
+    private int maxPassenger = 437;
+    private int passenger;
 
-public class Plane implements Airplane{
-    public boing437(){
-
+    public Boing() {
+        takeOff();
+        landing();
     }
 
-    public void superJet(){
-        List<String> izhevsk_moscow = new ArrayList<>();
+    @Override
+    public void takeOff() {
+        System.out.println("Рейс " + boing437 + " вылетел в пункт назначения.");
     }
 
-    public void yan54(){
-        List<String> izhevsk_moscow = new ArrayList<>();
+    @Override
+    public void landing() {
+        System.out.println("Рейс" + boing437 + " заходит на посадочную полосу.");
     }
 
+
+    @Override
+    public void addPassenger(int passenger) {
+        if (passenger<=maxPassenger){
+            this.passenger = passenger;
+            System.out.println("пассажиры на борту рейса " + boing437);
+        }
+        else {
+            System.out.println("Он не резиновый, место осталось только в грузовом");
+        }
+    }
 }
